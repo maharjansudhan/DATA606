@@ -1,0 +1,323 @@
+---
+title: "DATA 606 Fall 2018 - Final Exam"
+author: "SUDHAN MAHARJAN"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r, echo=FALSE}
+options(digits = 2)
+```
+
+# Part I
+
+Please put the answers for Part I next to the question number (2pts each):
+
+### 1. 
+    a.  Categorical 
+    b.  Discrete
+    c.  Discrete, Categorical
+    d.  Discrete, Numeric
+    e.  Categorical, Discrete, Numeric
+
+
+### 2.  
+    a.  mean = 3.3, median = 3.5  
+        The histogram is left skewed. Median should be higher than mean.
+
+### 3.
+    d. Both studies (a) and (b) can be conducted in order to establish that the treatment does indeed cause
+improvement with regards to fever in Ebola patients.
+    (In both cases, there is some kind of treatment conducted. There is a separation of treatment conducted and not conducted on Condition a and Condition b)
+
+### 4.   
+    d. eye color and natural hair color are independent
+    (There is no relationship between hair color and eye color. These both are independent to each other.)
+
+### 5.
+    b. 17.8 and 69.0
+    (These are the furthest points from min or max)
+
+### 6.  
+    d. median and interquartile range; mean and standard deviation
+
+
+### 7a. Describe the two distributions (2pts).
+
+Answer: Figure A is skewed right with lower kurtosis. The spread is narrow. Median > Mean.
+        Figure B is normally distributed with higher kurtosis. The spread is wide and looks symmetrical.           Mean > Median.
+
+
+### 7b. Explain why the means of these two distributions are similar but the standard deviations are not (2 pts).
+
+Answer: In Figure B, the distribution of the mean is of sample size 30 which is derived from 500 random samples in Figure A. The samples are independent. The reason why the standard deviations are different is because they are calculated different for Figure A and Figure B which both have different data one is 500 random samples with obeserved variable and one with 30 sample from Figure A.    
+
+
+### 7c. What is the statistical principal that describes this phenomenon (2 pts)?
+
+Answer: It is called Central Limit Theroem which states that the sampling distribution of the mean of any independent, random variable will be normal or nearly normal, if the sample size is large enough.
+
+
+# Part II
+
+Consider the four datasets, each with two columns (x and y), provided below. Be sure to replace the `NA` with your answer for each part (e.g. assign the mean of `x` for `data1` to the `data1.x.mean` variable). When you Knit your answer document, a table will be generated with all the answers.
+
+```{r}
+options(digits=2)
+data1 <- data.frame(x=c(10,8,13,9,11,14,6,4,12,7,5),
+					y=c(8.04,6.95,7.58,8.81,8.33,9.96,7.24,4.26,10.84,4.82,5.68))
+data2 <- data.frame(x=c(10,8,13,9,11,14,6,4,12,7,5),
+					y=c(9.14,8.14,8.74,8.77,9.26,8.1,6.13,3.1,9.13,7.26,4.74))
+data3 <- data.frame(x=c(10,8,13,9,11,14,6,4,12,7,5),
+					y=c(7.46,6.77,12.74,7.11,7.81,8.84,6.08,5.39,8.15,6.42,5.73))
+data4 <- data.frame(x=c(8,8,8,8,8,8,8,19,8,8,8),
+					y=c(6.58,5.76,7.71,8.84,8.47,7.04,5.25,12.5,5.56,7.91,6.89))
+```
+
+For each column, calculate (to two decimal places):
+
+#### a. The mean (for x and y separately; 1 pt).
+
+```{r include=TRUE}
+#data1 mean
+data1.x.mean <- mean(data1$x)
+data1.x.mean
+data1.y.mean <- mean(data1$y)
+data1.y.mean
+summary(data1)
+
+#data2 mean
+data2.x.mean <- mean(data2$x)
+data2.x.mean
+data2.y.mean <- mean(data2$y)
+data2.y.mean
+summary(data2)
+
+#data3 mean
+data3.x.mean <- mean(data3$x)
+data3.x.mean
+data3.y.mean <- mean(data3$y)
+data3.y.mean
+summary(data3)
+
+#data4 mean
+data4.x.mean <- mean(data4$x)
+data4.x.mean
+data4.y.mean <- mean(data4$y)
+data4.y.mean
+summary(data4)
+```
+
+#### b. The median (for x and y separately; 1 pt).
+
+```{r include=TRUE}
+#data1 median
+data1.x.median <- median(data1$x)
+data1.x.median
+data1.y.median <- median(data1$y)
+data1.y.median
+
+#data2 median
+data2.x.median <- median(data2$x)
+data2.x.median
+data2.y.median <- median(data2$y)
+data2.y.median
+
+#data3 median
+data3.x.median <- median(data3$x)
+data3.x.median
+data3.y.median <- median(data3$y)
+data3.y.median
+
+#data4 median
+data4.x.median <- median(data4$x)
+data4.x.median
+data4.y.median <- median(data4$y)
+data4.y.median
+```
+
+#### c. The standard deviation (for x and y separately; 1 pt).
+
+```{r include=TRUE}
+#data1 standard deviation
+data1.x.sd <- sd(data1$x,2)
+data1.x.sd
+data1.y.sd <- sd(data1$y,2)
+data1.y.sd
+
+#data2 standard deviation
+data2.x.sd <- sd(data2$x,2)
+data2.x.sd
+data2.y.sd <- sd(data2$y,2)
+data2.y.sd
+
+#data3 standard deviation
+data3.x.sd <- sd(data3$x,2)
+data3.x.sd
+data3.y.sd <- sd(data3$y,2)
+data3.y.sd
+
+#data4 standard deviation
+data4.x.sd <- sd(data4$x,2)
+data4.x.sd
+data4.y.sd <- sd(data4$y,2)
+data4.y.sd
+```
+
+#### For each x and y pair, calculate (also to two decimal places; 1 pt):
+
+#### d. The correlation (1 pt).
+
+```{r include=TRUE}
+# Correlation data1
+data1.correlation <- round(cor(x = data1$x, y = data1$y), 2)
+data1.correlation
+
+# Correlation data2
+data2.correlation <- round(cor(x = data2$x, y = data2$y), 2)
+data2.correlation
+
+# Correlation data3
+data3.correlation <- round(cor(x = data3$x, y = data3$y), 2)
+data3.correlation
+
+# Correlation data4
+data4.correlation <- round(cor(x = data4$x, y = data4$y), 2)
+data4.correlation
+summary(data4.correlation)
+```
+
+#### e. Linear regression equation (2 pts).
+
+```{r include=TRUE}
+# Linear regression data1
+d1 <- lm(y ~ x,data = data1)
+summary(d1)
+data1.slope <- 0.500
+
+# Linear regression data2
+d2 <- lm(y ~ x,data = data2)
+summary(d2)
+data2.slope <- 0.500
+
+# Linear regression data3
+d3 <- lm(y ~ x,data = data3)
+summary(d3)
+data3.slope <- 0.500
+
+# Linear regression data4
+d4 <- lm(y ~ x,data = data4)
+summary(d4)
+data4.slope <- 0.500
+
+#from above summary
+
+data1.intercept <- 3.000
+data2.intercept <- 3.001
+data3.intercept <- 3.002
+data4.intercept <- 3.002
+```
+
+#### f. R-Squared (2 pts).
+
+```{r include=TRUE}
+#from above summary
+data1.rsquared <- 0.629
+data2.rsquared <- 0.629
+data3.rsquared <- 0.629
+data4.rsquared <- 0.63
+```
+
+```{r, echo=FALSE, results='asis'}
+##### DO NOT MODIFY THIS R BLOCK! ######
+# This R block will create a table to display all the calculations above in one table.
+library(knitr)
+library(kableExtra)
+results <- data.frame(
+	data1.x = c(data1.x.mean, data1.x.median, data1.x.sd, data1.correlation, data1.intercept, data1.slope, data1.rsquared),
+	data1.y = c(data1.y.mean, data1.y.median, data1.y.sd, NA, NA, NA, NA),
+	data2.x = c(data2.x.mean, data2.x.median, data2.x.sd, data2.correlation, data2.intercept, data2.slope, data2.rsquared),
+	data2.y = c(data2.y.mean, data2.y.median, data2.y.sd, NA, NA, NA, NA),
+	data3.x = c(data3.x.mean, data3.x.median, data3.x.sd, data3.correlation, data3.intercept, data3.slope, data3.rsquared),
+	data3.y = c(data3.y.mean, data3.y.median, data3.y.sd, NA, NA, NA, NA),
+	data4.x = c(data4.x.mean, data4.x.median, data4.x.sd, data4.correlation, data4.intercept, data4.slope, data4.rsquared),
+	data4.y = c(data4.y.mean, data4.y.median, data4.y.sd, NA, NA, NA, NA),
+	stringsAsFactors = FALSE
+)
+row.names(results) <- c('Mean', 'Median', 'SD', 'r', 'Intercept', 'Slope', 'R-Squared')
+names(results) <- c('x','y','x','y','x','y','x','y')
+options(knitr.kable.NA = '')
+kable(results, digits = 2, 
+	  align = 'r',
+	  row.names = TRUE, 
+	  format.args=list(nsmall = 2)) %>%
+	column_spec(2:9, width = ".35in") %>%
+	add_header_above(c(" " = 1, "Data 1" = 2, "Data 2" = 2, "Data 3" = 2, "Data 4" = 2))
+```
+
+#### g. For each pair, is it appropriate to estimate a linear regression model? Why or why not? Be specific as to why for each pair and include appropriate plots! (4 pts)
+
+Answer:
+
+In order to estimate a linear regression model for each pair, first you need to check the conditions.
+
+1.Linearity
+2.Nearly normal residuals
+3.Constant variability
+4.Independent observations
+
+```{r}
+# For data1
+par(mfrow=c(2,2))
+plot(data1$x, data1$y)
+hist(d1$residuals)
+qqnorm(d1$residuals)
+qqline(d1$residuals)
+```
+
+According to the plots, data1 does not show much of linearity, Q-Q plot has slightly normal nature with outliers, and distribution in histogram is unclear. Therefore, linear regression model is not appropriate.
+
+
+```{r}
+# For data2
+par(mfrow=c(2,2))
+plot(data2$x, data2$y)
+hist(d2$residuals)
+qqnorm(d2$residuals)
+qqline(d2$residuals)
+```
+
+According to the plots, data2 has a curve, Q-Q plot has a line with no meaning, and distribution in histogram has no pattern. Therefore, linear regression model is not possible.
+
+
+
+```{r}
+# For data3
+par(mfrow=c(2,2))
+plot(data3$x, data3$y)
+hist(d3$residuals)
+qqnorm(d3$residuals)
+qqline(d3$residuals)
+```
+
+According to the plots, data3 has some kind of linearity on the plots, The histogram has a normal distribution of data but since there is an outlier it might effect the distribution, and Q-Q plot has a line with more increment on x-value. Therefore, linear regression model is not appropriate.
+
+
+```{r}
+# For data4
+par(mfrow=c(2,2))
+plot(data4$x, data4$y)
+hist(d4$residuals)
+qqnorm(d4$residuals)
+qqline(d4$residuals)
+```
+
+According to the plots, Q-Q plot has a line with some meaningful value, but the main plot has no linearity or curve and the histogram doesn't show any kind of normality in the distribution. Therefore, linear regression model is won't be appropriate.
+
+#### h. Explain why it is important to include appropriate visualizations when analyzing data. Include any visualization(s) you create. (2 pts)
+
+Answer:
+It is important to visualize the data as it can show the facts about the data without even calculating anything. By looking at the histogram, without any calculation we can see if the data is normally distributed or not. The straight line on the Q-Q plot can tell us many things about the data for which we have to write so many lines of calculations. The numbers won't mean much until and unless you are a pro on how to make sense out of it but with the correct visualization of the dataset and analysis, even a non-data scienctist pro can look at the figures and assume what is going on. 
+
+
